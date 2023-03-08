@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Assentos from "../../components/Assentos"
 
 export default function SeatsPage() {
 
@@ -6,13 +7,7 @@ export default function SeatsPage() {
         <PageContainer>
             Selecione o(s) assento(s)
 
-            <SeatsContainer>
-                <SeatItem>01</SeatItem>
-                <SeatItem>02</SeatItem>
-                <SeatItem>03</SeatItem>
-                <SeatItem>04</SeatItem>
-                <SeatItem>05</SeatItem>
-            </SeatsContainer>
+            <Assentos></Assentos>
 
             <CaptionContainer>
                 <CaptionItem>

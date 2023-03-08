@@ -2,9 +2,8 @@ import styled from "styled-components"
 
 export default function Sessao(props) {
 
-    const {id, diaMes, diaSemana, horarios} = props;
-    const {hora, idSessao} = horarios;
-    
+    const { diaMes, diaSemana, horarios} = props;
+    console.log(horarios);
     return(
 
 
