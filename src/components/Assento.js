@@ -1,14 +1,26 @@
+import { useState } from "react";
 import styled from "styled-components"
 
 export default function Assento(props) {
     const {name, isAvailable, id} = props;
+
+    const [selecionado, setSelecionado] = useState([]);
     
+    console.log("selecionado", selecionado);
+
+    function selecionar(item) {
+       const novaSelecao = item;
+       setSelecionado([...selecionado, novaSelecao]);
+
+    }
+
     return(
     <>
-        <SeatItem isAvailable={isAvailable}>{name}</SeatItem>
+        <SeatItem isAvailable={isAvailable} onClick={() => selecionar(name)}>{name}</SeatItem>
     </> 
     )
 }
+
 
 const SeatItem = styled.div`
     border: 1px ${props => props.isAvailable ? "#7B8B99" : "#F7C52B"} ;      // Essa cor deve mudar

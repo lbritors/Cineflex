@@ -9,6 +9,7 @@ export default function Assentos() {
     const [assentos, setAssentos] = useState([]);
     const {idSessao} = useParams();
     
+  
     
 
     useEffect(() => {
@@ -22,7 +23,7 @@ export default function Assentos() {
 <>
     <SeatsContainer>
         
-        {assentos.map(a => <Assento key={a.id} isAvailable={a.isAvailable} id={a.id} name={a.name}></Assento>)}
+        {assentos.map(a => <Assento key={a.id}  isAvailable={a.isAvailable} id={a.id} name={a.name}></Assento>)}
            
     </SeatsContainer>
     <CaptionContainer>
