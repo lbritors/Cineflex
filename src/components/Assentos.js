@@ -3,13 +3,16 @@ import styled from "styled-components"
 import axios from "axios";
 import Assento from "./Assento";
 import Legenda from "./Legenda";
+import { useParams } from "react-router-dom";
 
 export default function Assentos() {
     const [assentos, setAssentos] = useState([]);
+    const {idSessao} = useParams();
+    
     
 
     useEffect(() => {
-        const url="https://mock-api.driven.com.br/api/v8/cineflex/showtimes/1/seats";
+        const url=`https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${idSessao}/seats`;
         const promise = axios.get(url);
         promise.then((res) => setAssentos(res.data.seats));
         promise.catch((err) => console.log(err.response));
@@ -18,8 +21,9 @@ export default function Assentos() {
     return(
 <>
     <SeatsContainer>
+        
         {assentos.map(a => <Assento key={a.id} isAvailable={a.isAvailable} id={a.id} name={a.name}></Assento>)}
-            
+           
     </SeatsContainer>
     <CaptionContainer>
       

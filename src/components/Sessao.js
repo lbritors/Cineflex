@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components"
+
 
 export default function Sessao(props) {
 
@@ -13,8 +14,12 @@ export default function Sessao(props) {
         {diaSemana} - {diaMes}
         <ButtonsContainer>
 
-            {horarios.map(h => <button key={h.id}>{h.name}</button>)}
-           
+            {horarios.map(h => 
+            <Link to={`/assentos/${h.id}`} key={h.id}>
+            <button >{h.name}</button>
+            </Link>
+            )}
+            
         </ButtonsContainer>
     </>
     )

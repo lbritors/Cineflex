@@ -2,12 +2,13 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import axios from "axios"
 import Sessao from "./Sessao";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Sessoes() {
    const [sessao, setSessao] = useState([]);
+   
    const {idFilme} = useParams();
-   console.log(idFilme);
+   
   
   
     useEffect(() => {
@@ -18,9 +19,14 @@ export default function Sessoes() {
     }, []);
  
     return(
-    <SessionContainer>
-        {sessao.map(s => <Sessao  key={s.id} id={s.id} diaMes={s.date} diaSemana={s.weekday} horarios={s.showtimes}></Sessao>)}
-    </SessionContainer>
+        <SessionContainer>
+            {sessao.map(s => 
+               
+                <Sessao 
+                 id={s.id} key={s.id} diaMes={s.date} diaSemana={s.weekday} horarios={s.showtimes}>
+                </Sessao>
+            )}
+        </SessionContainer>
     )
 }
 
