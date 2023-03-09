@@ -1,9 +1,11 @@
+import { useParams } from "react-router-dom";
 import styled from "styled-components"
 
 export default function Sessao(props) {
 
     const { diaMes, diaSemana, horarios} = props;
-    console.log(horarios);
+    
+  
     return(
 
 

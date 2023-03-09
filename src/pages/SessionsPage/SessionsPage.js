@@ -1,7 +1,9 @@
+import { useParams } from "react-router-dom"
 import styled from "styled-components"
 import Sessoes from "../../components/Sessoes"
 
 export default function SessionsPage() {
+  
 
     return (
         <PageContainer>

@@ -1,15 +1,17 @@
 import styled from "styled-components"
 import ListaFilmes from "../../components/ListaFilmes"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 export default function HomePage() {
     return (
-        <PageContainer>
-            Selecione o filme
-               
-                <ListaFilmes/>
-               
-
-        </PageContainer>
+      
+                <PageContainer>
+                    Selecione o filme
+            
+                        <ListaFilmes/>
+            
+                </PageContainer>
+       
     )
 }
 

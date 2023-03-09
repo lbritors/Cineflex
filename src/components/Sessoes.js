@@ -2,12 +2,16 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import axios from "axios"
 import Sessao from "./Sessao";
+import { useParams } from "react-router-dom";
 
 export default function Sessoes() {
    const [sessao, setSessao] = useState([]);
-  console.log(sessao);
+   const {idFilme} = useParams();
+   console.log(idFilme);
+  
+  
     useEffect(() => {
-        const url= "https://mock-api.driven.com.br/api/v8/cineflex/movies/1/showtimes";
+        const url= `https://mock-api.driven.com.br/api/v8/cineflex/movies/${idFilme}/showtimes`;
         const promise = axios.get(url);
         promise.then((res) => setSessao(res.data.days));
         promise.catch((err) => console.log(err.response.data));

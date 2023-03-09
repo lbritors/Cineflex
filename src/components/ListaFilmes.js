@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Filme from "./Filme";
 import styled from "styled-components";
+import { Link, Route, Routes } from "react-router-dom";
+import Sessoes from "./Sessoes";
 
 
 export default function ListaFilmes() {
     const [filme, setFilme] = useState([]);
+
     console.log(filme);
     useEffect(() => {
         const url = "https://mock-api.driven.com.br/api/v8/cineflex/movies";
@@ -17,9 +20,15 @@ export default function ListaFilmes() {
     
     return (
         
-        <ListContainer>
-            {filme.map(f => <Filme foto={f.posterURL} nome={f.title} id={f.id}></Filme>)}
-        </ListContainer>
+            <ListContainer>
+            {filme.map(f =>
+            <Link to={`/sessoes/${f.id}`} key={f.id}>
+                    <Filme  foto={f.posterURL} nome={f.title} id={f.id}></Filme>
+            </Link>
+            )}
+            </ListContainer>
+                
+         
         
     )    
 

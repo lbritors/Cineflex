@@ -1,14 +1,21 @@
+import { BrowserRouter, Link, Route, Routes, useParams } from "react-router-dom"
 import styled from "styled-components"
+import Sessoes from "./Sessoes"
 
 
 export default function Filme(props) {
 
-const {foto, nome, id} = props
+const {foto, nome, id} = props;
+const parametro = useParams();
+
 
 return (
-    <MovieContainer>
-        <img src={foto} alt={nome} key={id}></img>
-    </MovieContainer>
+        
+            <MovieContainer>
+                <img src={foto} alt={nome} key={id}></img>
+            </MovieContainer>
+        
+  
 )
 
 }
