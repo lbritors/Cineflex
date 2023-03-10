@@ -2,12 +2,12 @@ import { useState } from "react";
 import styled from "styled-components"
 
 export default function Assento(props) {
-    const {name, isAvailable, selecionado, setSelecionado, verificaSelecao, setVerificaSelecao} = props;
+    const {name, isAvailable, selecionado, setSelecionado} = props;
     
     console.log(selecionado)
 
     function selecionar(item) {
-        if (!selecionado.includes(item)) {
+        if (!selecionado.includes(item) && isAvailable) {
             const novaSelecao = item;
             setSelecionado([...selecionado, novaSelecao]);
          
@@ -19,14 +19,10 @@ export default function Assento(props) {
         }
     }
     
-
-
-
     
-
     return(
     <>
-        <SeatItem isAvailable={isAvailable} selecionado={selecionado} verificaSelecao={verificaSelecao} name={name} onClick={() => selecionar(name)}>{name}</SeatItem>
+        <SeatItem isAvailable={isAvailable} selecionado={selecionado}  name={name} onClick={() => selecionar(name)}>{name}</SeatItem>
     </> 
     )
 }

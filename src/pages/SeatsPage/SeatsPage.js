@@ -9,8 +9,7 @@ export default function SeatsPage() {
 
             <Assentos></Assentos>
 
-
-            <FormContainer>
+            {/* <FormContainer>
                 Nome do Comprador:
                 <input placeholder="Digite seu nome..." />
 
@@ -18,7 +17,8 @@ export default function SeatsPage() {
                 <input placeholder="Digite seu CPF..." />
 
                 <button>Reservar Assento(s)</button>
-            </FormContainer>
+            </FormContainer> */}
+            
 
             <FooterContainer>
                 <div>
