@@ -1,24 +1,24 @@
 import styled from "styled-components"
 import Assentos from "../../components/Assentos"
+import { useState } from "react";
+import Formulario from "../../components/Formulario";
 
 export default function SeatsPage() {
+    const [assentos, setAssentos] = useState([]);
+    const [selecionado, setSelecionado] = useState([]);
+    const [idSelecionado, setIdSelecionado] = useState([]);
+
+
 
     return (
         <PageContainer>
             Selecione o(s) assento(s)
 
-            <Assentos></Assentos>
+            <Assentos assentos={assentos} setAssentos={setAssentos} selecionado={selecionado} setSelecionado={setSelecionado} idSelecionado={idSelecionado} setIdSelecionado={setIdSelecionado}></Assentos>
 
-            {/* <FormContainer>
-                Nome do Comprador:
-                <input placeholder="Digite seu nome..." />
-
-                CPF do Comprador:
-                <input placeholder="Digite seu CPF..." />
-
-                <button>Reservar Assento(s)</button>
-            </FormContainer> */}
             
+            <Formulario assentos={assentos} setAssentos={setAssentos} selecionado={selecionado} idSelecionado={idSelecionado}></Formulario>
+
 
             <FooterContainer>
                 <div>

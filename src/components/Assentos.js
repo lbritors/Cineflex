@@ -6,9 +6,8 @@ import Legenda from "./Legenda";
 import { useParams } from "react-router-dom";
 import Formulario from "./Formulario";
 
-export default function Assentos() {
-    const [assentos, setAssentos] = useState([]);
-    const [selecionado, setSelecionado] = useState([]);
+export default function Assentos(props) {
+    const {assentos, setAssentos, selecionado, setSelecionado, idSelecionado, setIdSelecionado} = props;
     const {idSessao} = useParams();
     
 
@@ -23,7 +22,7 @@ export default function Assentos() {
 <>
     <SeatsContainer>
         
-        {assentos.map(a => <Assento key={a.id} selecionado={selecionado}  setSelecionado={setSelecionado}  isAvailable={a.isAvailable} id={a.id} name={a.name}></Assento>)}
+        {assentos.map(a => <Assento key={a.id} selecionado={selecionado}  setSelecionado={setSelecionado} idSelecionado={idSelecionado} setIdSelecionado={setIdSelecionado} isAvailable={a.isAvailable} id={a.id} name={a.name}></Assento>)}
            
     </SeatsContainer>
     <CaptionContainer>
@@ -31,7 +30,6 @@ export default function Assentos() {
         <Legenda></Legenda>
         
     </CaptionContainer>
-    <Formulario></Formulario>
    
 </>
     )

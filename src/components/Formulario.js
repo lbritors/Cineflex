@@ -1,29 +1,47 @@
+import axios from "axios";
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import styled from "styled-components"
 
-export default function Formulario() {
+export default function Formulario(props) {
+    
+    const {assentos, selecionado, idSelecionado} = props;
 
     const [nomeComprador, setNomeComprador] = useState("");
     const [cpfComprador, setCpfComprador] = useState("");
+    const navigate = useNavigate();
+    
 
-    useEffect(() => {
-        const url = "https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many";
-    })
+        function submeterForm(event) {
+            event.preventDefault();
+            const url = "https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many";
+            const body = {ids: idSelecionado, name: nomeComprador, cpf: cpfComprador};
+            const promise = axios.post(url, body);
+            promise.then((res) => navigate("/sucesso"));
+            promise.catch((err) => alert(err.response.data.message));
+    
+        }
 
 
     return( 
 
-    <FormContainer onSubmit={useEffect}>
-        <label htmlFor="nomeComprador">Nome do Comprador:</label>
-        <input value={nomeComprador} onChange={(e => setNomeComprador(e.target.value))} required id="nomeComprador" placeholder="Digite seu nome..." />
+    <FormContainer >
+        <form onSubmit={submeterForm}> 
+            <label htmlFor="nomeComprador">Nome do Comprador:</label>
+            <input value={nomeComprador}
+            onChange={(e => setNomeComprador(e.target.value))}
+            required id="nomeComprador" placeholder="Digite seu nome..." />
 
-        <label htmlFor="cpfComprador">CPF do Comprador:</label>
-        <input  value={cpfComprador} onChange={(e => setCpfComprador(e.target.value))} required id="cpfComprador" placeholder="Digite seu CPF..." />
+            <label htmlFor="cpfComprador">CPF do Comprador:</label>
+            <input  value={cpfComprador}
+            onChange={(e => setCpfComprador(e.target.value))} 
+            required id="cpfComprador" placeholder="Digite seu CPF..." />
 
-        <Link to={"/sucesso"}><button type="submit">Reservar Assento(s)</button></Link>
-    </FormContainer>)
-}
+            <button type="submit">Reservar Assento(s)</button>
+        </form>
+    </FormContainer>
+    )
+    }
 
 
 const FormContainer = styled.div`

@@ -1,28 +1,37 @@
 import { useState } from "react";
+import { json } from "react-router-dom";
 import styled from "styled-components"
+import Formulario from "./Formulario";
 
 export default function Assento(props) {
-    const {name, isAvailable, selecionado, setSelecionado} = props;
+    const {name, isAvailable, selecionado, setSelecionado, id, idSelecionado, setIdSelecionado} = props;
     
-    console.log(selecionado)
+    console.log("assento", selecionado);
+    console.log("id", idSelecionado);
 
-    function selecionar(item) {
+    function selecionar(item, idItem) {
         if (!selecionado.includes(item) && isAvailable) {
-            const novaSelecao = item;
+
+            const novaSelecao =  item;
             setSelecionado([...selecionado, novaSelecao]);
+            const novoIdSelecionado = idItem;
+            setIdSelecionado([...idSelecionado, novoIdSelecionado])
          
         } else {        
+            
             const retira  = selecionado.filter( f => f !== item);
             setSelecionado(retira);
+            const retiraId = idSelecionado.filter(i => i !== idItem);
+            setIdSelecionado(retiraId);
             
-
         }
-    }
     
+    }
     
     return(
     <>
-        <SeatItem isAvailable={isAvailable} selecionado={selecionado}  name={name} onClick={() => selecionar(name)}>{name}</SeatItem>
+        <SeatItem isAvailable={isAvailable} selecionado={selecionado}  name={name} onClick={() => selecionar(name, id)}>{name}</SeatItem>
+
     </> 
     )
 }
