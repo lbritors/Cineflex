@@ -25,11 +25,7 @@ export default function Assentos(props) {
         {assentos.map(a => <Assento key={a.id} selecionado={selecionado}  setSelecionado={setSelecionado} idSelecionado={idSelecionado} setIdSelecionado={setIdSelecionado} isAvailable={a.isAvailable} id={a.id} name={a.name}></Assento>)}
            
     </SeatsContainer>
-    <CaptionContainer>
-      
-        <Legenda></Legenda>
-        
-    </CaptionContainer>
+   
    
 </>
     )
@@ -48,10 +44,3 @@ const SeatsContainer = styled.div`
     margin-top: 20px;
 `
 
-const CaptionContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    width: 300px;
-    justify-content: space-between;
-    margin: 20px;
-`

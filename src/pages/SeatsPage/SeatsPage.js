@@ -3,6 +3,7 @@ import Assentos from "../../components/Assentos"
 import { useState } from "react";
 import Formulario from "../../components/Formulario";
 import Rodape from "../../components/Rodape";
+import Legenda from "../../components/Legenda";
 
 export default function SeatsPage(props) {
     const {assentos, setAssentos, selecionado, setSelecionado, nomeComprador, setNomeComprador, cpfComprador, setCpfComprador, diaSemana, hora, fotoFilme, nomeFilme} = props;
@@ -18,7 +19,7 @@ export default function SeatsPage(props) {
             setAssentos={setAssentos} 
             selecionado={selecionado} setSelecionado={setSelecionado}
             idSelecionado={idSelecionado} setIdSelecionado={setIdSelecionado}></Assentos>
-
+            <Legenda/>
             
             <Formulario assentos={assentos} 
             setAssentos={setAssentos} 
@@ -29,6 +30,7 @@ export default function SeatsPage(props) {
              selecionado={selecionado} 
              idSelecionado={idSelecionado}>
              </Formulario>
+        
 
             <Rodape>
                 <div>
@@ -58,13 +60,7 @@ const PageContainer = styled.div`
     padding-top: 70px;
 `
 
-const CaptionContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    width: 300px;
-    justify-content: space-between;
-    margin: 20px;
-`
+
 const CaptionCircle = styled.div`
     border: 1px solid blue;         // Essa cor deve mudar
     background-color: lightblue;    // Essa cor deve mudar
@@ -82,4 +78,5 @@ const CaptionItem = styled.div`
     align-items: center;
     font-size: 12px;
 `
+
 
