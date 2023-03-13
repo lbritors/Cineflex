@@ -3,25 +3,27 @@ import styled from "styled-components"
 
 
 export default function Sessao(props) {
+    
 
-    const { diaMes, diaSemana, horarios, setDiaSemana, setHora, setDiaMes} = props;
-    function salvaDiaHora(hora) {
-        setDiaSemana(diaSemana);
+    const { diaMes, diaSemana, horarios, setDiaSemana, setHora, setDiaMes, arrayNumber
+    } = props;
+    
+    function salvaHora(hora) {
         setHora(hora);
         setDiaMes(diaMes);
+        setDiaSemana(diaSemana);
     }  
-    
   
     return(
 
 
-    <>
+    < >
         {diaSemana} - {diaMes}
         <ButtonsContainer>
 
             {horarios.map(h => 
             <Link to={`/assentos/${h.id}`} key={h.id}>
-            <button onClick={() => salvaDiaHora(h.name)}>{h.name} </button>
+            <button onClick={() => salvaHora(h.name)}>{h.name} </button>
             </Link>
             )}
             

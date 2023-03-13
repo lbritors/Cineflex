@@ -11,7 +11,6 @@ export default function Sessoes(props) {
    const {idFilme} = useParams();
    
   
-  
     useEffect(() => {
         const url= `https://mock-api.driven.com.br/api/v8/cineflex/movies/${idFilme}/showtimes`;
         const promise = axios.get(url);
@@ -24,7 +23,7 @@ export default function Sessoes(props) {
             {sessao.map(s => 
                
                 <Sessao 
-                 id={s.id} key={s.id} diaMes={s.date} diaSemana={s.weekday} horarios={s.showtimes} setDiaSemana={setDiaSemana} setHora={setHora} setDiaMes={setDiaMes}>
+                 id={s.id} key={s.id} diaMes={s.date} diaSemana={s.weekday} arrayNumber={s} horarios={s.showtimes} setDiaSemana={setDiaSemana} setHora={setHora} setDiaMes={setDiaMes}>
                 </Sessao>
             )}
         </SessionContainer>
