@@ -2,13 +2,14 @@ import styled from "styled-components"
 import ListaFilmes from "../../components/ListaFilmes"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-export default function HomePage() {
+export default function HomePage(props) {
+    const {filme, setFilme, setNomeFilme, setFotoFilme} = props;
     return (
       
                 <PageContainer>
                     Selecione o filme
             
-                        <ListaFilmes/>
+                        <ListaFilmes filme={filme} setFilme={setFilme} setFotoFilme={setFotoFilme} setNomeFilme={setNomeFilme}/>
             
                 </PageContainer>
        

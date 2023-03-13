@@ -5,14 +5,18 @@ import Sessoes from "./Sessoes"
 
 export default function Filme(props) {
 
-const {foto, nome, id} = props;
-const parametro = useParams();
+const {foto, nome, id, setNomeFilme, setFotoFilme} = props;
 
+ function guardaValor() {
+    setNomeFilme(nome);
+    setFotoFilme(foto);
+
+ }
 
 return (
         
             <MovieContainer>
-                <img src={foto} alt={nome} key={id}></img>
+                <img onClick={guardaValor} src={foto} alt={nome} key={id}></img>
             </MovieContainer>
         
   

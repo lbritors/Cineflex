@@ -1,25 +1,26 @@
 import { useParams } from "react-router-dom"
 import styled from "styled-components"
+import Rodape from "../../components/Rodape";
 import Sessoes from "../../components/Sessoes"
 
-export default function SessionsPage() {
-  
+export default function SessionsPage(props) {
+  const {sessao, setSessao, nomeFilme, fotoFilme, setDiaSemana, setHora, setDiaMes} = props;
 
     return (
         <PageContainer>
             Selecione o horário
             <div>
-                <Sessoes></Sessoes>
+                <Sessoes sessao={sessao} setSessao={setSessao} setDiaSemana={setDiaSemana} setHora={setHora} setDiaMes={setDiaMes}></Sessoes>
             </div>
 
-            <FooterContainer>
+            <Rodape>
                 <div>
-                    <img src={"https://br.web.img2.acsta.net/pictures/22/05/16/17/59/5165498.jpg"} alt="poster" />
+                    <img src={fotoFilme}></img>
                 </div>
                 <div>
-                    <p>Tudo em todo lugar ao mesmo tempo</p>
+                   <p> {nomeFilme}</p>
                 </div>
-            </FooterContainer>
+            </Rodape>
 
         </PageContainer>
     )

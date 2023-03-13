@@ -4,7 +4,12 @@ import styled from "styled-components"
 
 export default function Sessao(props) {
 
-    const { diaMes, diaSemana, horarios} = props;
+    const { diaMes, diaSemana, horarios, setDiaSemana, setHora, setDiaMes} = props;
+    function salvaDiaHora(hora) {
+        setDiaSemana(diaSemana);
+        setHora(hora);
+        setDiaMes(diaMes);
+    }  
     
   
     return(
@@ -16,7 +21,7 @@ export default function Sessao(props) {
 
             {horarios.map(h => 
             <Link to={`/assentos/${h.id}`} key={h.id}>
-            <button >{h.name}</button>
+            <button onClick={() => salvaDiaHora(h.name)}>{h.name} </button>
             </Link>
             )}
             

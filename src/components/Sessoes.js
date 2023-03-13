@@ -4,8 +4,9 @@ import axios from "axios"
 import Sessao from "./Sessao";
 import { Link, useParams } from "react-router-dom";
 
-export default function Sessoes() {
-   const [sessao, setSessao] = useState([]);
+export default function Sessoes(props) {
+    const {sessao, setSessao, setDiaSemana, setHora, setDiaMes} = props;
+    
    
    const {idFilme} = useParams();
    
@@ -23,7 +24,7 @@ export default function Sessoes() {
             {sessao.map(s => 
                
                 <Sessao 
-                 id={s.id} key={s.id} diaMes={s.date} diaSemana={s.weekday} horarios={s.showtimes}>
+                 id={s.id} key={s.id} diaMes={s.date} diaSemana={s.weekday} horarios={s.showtimes} setDiaSemana={setDiaSemana} setHora={setHora} setDiaMes={setDiaMes}>
                 </Sessao>
             )}
         </SessionContainer>

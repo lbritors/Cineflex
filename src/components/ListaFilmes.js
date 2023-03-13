@@ -6,8 +6,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import Sessoes from "./Sessoes";
 
 
-export default function ListaFilmes() {
-    const [filme, setFilme] = useState([]);
+export default function ListaFilmes(props) {
+    const {filme, setFilme, setNomeFilme, setFotoFilme} = props;
 
     console.log(filme);
     useEffect(() => {
@@ -23,13 +23,11 @@ export default function ListaFilmes() {
             <ListContainer>
             {filme.map(f =>
             <Link to={`/sessoes/${f.id}`} key={f.id}>
-                    <Filme  foto={f.posterURL} nome={f.title} id={f.id}></Filme>
+                    <Filme  foto={f.posterURL} nome={f.title} id={f.id} setFotoFilme={setFotoFilme} setNomeFilme={setNomeFilme}></Filme>
             </Link>
             )}
             </ListContainer>
                 
-         
-        
     )    
 
 

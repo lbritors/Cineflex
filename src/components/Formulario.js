@@ -5,10 +5,8 @@ import styled from "styled-components"
 
 export default function Formulario(props) {
     
-    const {assentos, selecionado, idSelecionado} = props;
+    const {idSelecionado, nomeComprador, setNomeComprador, cpfComprador, setCpfComprador} = props;
 
-    const [nomeComprador, setNomeComprador] = useState("");
-    const [cpfComprador, setCpfComprador] = useState("");
     const navigate = useNavigate();
     
 

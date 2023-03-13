@@ -2,10 +2,10 @@ import styled from "styled-components"
 import Assentos from "../../components/Assentos"
 import { useState } from "react";
 import Formulario from "../../components/Formulario";
+import Rodape from "../../components/Rodape";
 
-export default function SeatsPage() {
-    const [assentos, setAssentos] = useState([]);
-    const [selecionado, setSelecionado] = useState([]);
+export default function SeatsPage(props) {
+    const {assentos, setAssentos, selecionado, setSelecionado, nomeComprador, setNomeComprador, cpfComprador, setCpfComprador, diaSemana, hora, fotoFilme, nomeFilme} = props;
     const [idSelecionado, setIdSelecionado] = useState([]);
 
 
@@ -14,13 +14,24 @@ export default function SeatsPage() {
         <PageContainer>
             Selecione o(s) assento(s)
 
-            <Assentos assentos={assentos} setAssentos={setAssentos} selecionado={selecionado} setSelecionado={setSelecionado} idSelecionado={idSelecionado} setIdSelecionado={setIdSelecionado}></Assentos>
+            <Assentos assentos={assentos}
+            setAssentos={setAssentos} 
+            selecionado={selecionado} setSelecionado={setSelecionado}
+            idSelecionado={idSelecionado} setIdSelecionado={setIdSelecionado}></Assentos>
 
             
-            <Formulario assentos={assentos} setAssentos={setAssentos} selecionado={selecionado} idSelecionado={idSelecionado}></Formulario>
+            <Formulario assentos={assentos} setAssentos={setAssentos} cpfComprador={cpfComprador} setCpfComprador={setCpfComprador} nomeComprador={nomeComprador} setNomeComprador={setNomeComprador} selecionado={selecionado} idSelecionado={idSelecionado}></Formulario>
+            <Rodape>
+                <div>
+                    <img src={fotoFilme}></img>
+                </div>
+                <div>
+                    <p>{nomeFilme}</p>
+                    <p>{diaSemana} - {hora}</p>
+                </div>
+            </Rodape>
 
-
-            <FooterContainer>
+            {/* <FooterContainer>
                 <div>
                     <img src={"https://br.web.img2.acsta.net/pictures/22/05/16/17/59/5165498.jpg"} alt="poster" />
                 </div>
@@ -28,7 +39,7 @@ export default function SeatsPage() {
                     <p>Tudo em todo lugar ao mesmo tempo</p>
                     <p>Sexta - 14h00</p>
                 </div>
-            </FooterContainer>
+            </FooterContainer> */}
 
         </PageContainer>
     )
@@ -47,20 +58,6 @@ const PageContainer = styled.div`
     padding-top: 70px;
 `
 
-const FormContainer = styled.div`
-    width: calc(100vw - 40px); 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 20px 0;
-    font-size: 18px;
-    button {
-        align-self: center;
-    }
-    input {
-        width: calc(100vw - 60px);
-    }
-`
 const CaptionContainer = styled.div`
     display: flex;
     flex-direction: row;
