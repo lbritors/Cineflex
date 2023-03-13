@@ -27,7 +27,9 @@ export default function App() {
 
     return (
         <>
-           <NavContainer>CINEFLEX</NavContainer>
+           <NavContainer>
+            CINEFLEX
+           </NavContainer>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<HomePage filme={filme} setFilme={setFilme} setFotoFilme={setFotoFilme} setNomeFilme={setNomeFilme}/>}></Route>
@@ -56,4 +58,6 @@ const NavContainer = styled.div`
         text-decoration: none;
         color: #E8833A;
     }
+
+   
 `

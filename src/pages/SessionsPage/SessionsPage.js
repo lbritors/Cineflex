@@ -32,6 +32,7 @@ const PageContainer = styled.div`
     font-family: 'Roboto';
     font-size: 24px;
     text-align: center;
+    align-items: center;
     color: #293845;
     margin-top: 30px;
     padding-bottom: 120px;

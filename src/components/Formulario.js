@@ -54,11 +54,16 @@ const FormContainer = styled.div`
     button {
         align-self: center;
     }
-    input {
+    form {
+    display:flex;
+    flex-direction: column;
+        input {
         width: calc(100vw - 60px);
+        }
+        label {
+        align-self: flex-start;
+        }
     }
-    label {
-        align-items: flex-start;
-        
-    }
+    
+    
 `
