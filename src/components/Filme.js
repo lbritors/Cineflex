@@ -7,6 +7,7 @@ export default function Filme(props) {
 
 const {foto, nome, id, setNomeFilme, setFotoFilme} = props;
 
+
  function guardaValor() {
     setNomeFilme(nome);
     setFotoFilme(foto);
@@ -15,8 +16,8 @@ const {foto, nome, id, setNomeFilme, setFotoFilme} = props;
 
 return (
         
-            <MovieContainer>
-                <img onClick={guardaValor} src={foto} alt={nome} key={id} data-test="movie"></img>
+            <MovieContainer onClick={guardaValor}> 
+                <img  src={foto} alt={nome} key={id} data-test="movie"></img>
             </MovieContainer>
         
   
