@@ -27,11 +27,13 @@ export default function Formulario(props) {
         <form onSubmit={submeterForm}> 
             <label htmlFor="nomeComprador">Nome do Comprador:</label>
             <input value={nomeComprador}
+            data-test="client-name"
             onChange={(e => setNomeComprador(e.target.value))}
             required id="nomeComprador" placeholder="Digite seu nome..." />
 
             <label htmlFor="cpfComprador">CPF do Comprador:</label>
             <input  value={cpfComprador}
+            data-test="client-cpf"
             onChange={(e => setCpfComprador(e.target.value))} 
             required id="cpfComprador" placeholder="Digite seu CPF..." />
 

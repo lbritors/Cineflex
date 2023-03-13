@@ -8,24 +8,24 @@ export default function SuccessPage(props) {
         <PageContainer>
             <h1>Pedido feito <br /> com sucesso!</h1>
 
-            <TextContainer>
+            <TextContainer data-test="movie-info">
                 <strong><p>Filme e sessão</p></strong>
                 <p>{nomeFilme}</p>
                 <p>{diaMes} - {hora}</p>
             </TextContainer>
 
-            <TextContainer>
+            <TextContainer data-test="seats-info">
                 <strong><p>Ingressos</p></strong>
                 {selecionado.map(s => <p key={s}>Assento {s}</p> )}
             </TextContainer>
 
-            <TextContainer>
+            <TextContainer data-test="client-info">
                 <strong><p>Comprador</p></strong>
                 <p>Nome: {nomeComprador}</p>
                 <p>CPF: {cpfComprador}</p>
             </TextContainer>
 
-            <Link to="/"><button >Voltar para Home</button></Link>
+            <Link data-test="go-home-btn" to="/"><button >Voltar para Home</button></Link>
         </PageContainer>
     )
 }

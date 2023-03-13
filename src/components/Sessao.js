@@ -17,18 +17,18 @@ export default function Sessao(props) {
     return(
 
 
-    < >
+    <div data-test="movie-day" >
         {diaSemana} - {diaMes}
         <ButtonsContainer>
 
             {horarios.map(h => 
-            <Link to={`/assentos/${h.id}`} key={h.id}>
-            <button onClick={() => salvaHora(h.name)}>{h.name} </button>
+            <Link to={`/assentos/${h.id}`} key={h.id} >
+            <button data-test="showtime" onClick={() => salvaHora(h.name)}>{h.name} </button>
             </Link>
             )}
             
         </ButtonsContainer>
-    </>
+    </div>
     )
 
 }

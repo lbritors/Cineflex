@@ -30,7 +30,7 @@ export default function Assento(props) {
     
     return(
     <>
-        <SeatItem isAvailable={isAvailable} selecionado={selecionado}  name={name} onClick={() => selecionar(name, id)}>{name}</SeatItem>
+        <SeatItem isAvailable={isAvailable} data-test="seat" selecionado={selecionado}  name={name} onClick={() => selecionar(name, id)}>{name}</SeatItem>
 
     </> 
     )

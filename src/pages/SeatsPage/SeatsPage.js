@@ -32,7 +32,7 @@ export default function SeatsPage(props) {
              </Formulario>
         
 
-            <Rodape>
+            <Rodape >
                 <div>
                     <img src={fotoFilme}></img>
                 </div>

@@ -16,7 +16,7 @@ const {foto, nome, id, setNomeFilme, setFotoFilme} = props;
 return (
         
             <MovieContainer>
-                <img onClick={guardaValor} src={foto} alt={nome} key={id}></img>
+                <img onClick={guardaValor} src={foto} alt={nome} key={id} data-test="movie"></img>
             </MovieContainer>
         
   
