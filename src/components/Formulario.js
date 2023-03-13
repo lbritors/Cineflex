@@ -37,7 +37,7 @@ export default function Formulario(props) {
             onChange={(e => setCpfComprador(e.target.value))} 
             required id="cpfComprador" placeholder="Digite seu CPF..." />
 
-            <button type="submit">Reservar Assento(s)</button>
+            <button data-test="book-seat-btn" type="submit">Reservar Assento(s)</button>
         </form>
     </FormContainer>
     )
@@ -47,8 +47,8 @@ export default function Formulario(props) {
 const FormContainer = styled.div`
     width: calc(100vw - 40px); 
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
+    flex-direction: column;
     margin: 20px 0;
     font-size: 18px;
     button {
@@ -56,5 +56,9 @@ const FormContainer = styled.div`
     }
     input {
         width: calc(100vw - 60px);
+    }
+    label {
+        align-items: flex-start;
+        
     }
 `

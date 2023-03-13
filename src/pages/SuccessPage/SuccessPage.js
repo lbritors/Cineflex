@@ -25,7 +25,7 @@ export default function SuccessPage(props) {
                 <p>CPF: {cpfComprador}</p>
             </TextContainer>
 
-            <Link data-test="go-home-btn" to="/"><button >Voltar para Home</button></Link>
+            <Link to="/"><button  data-test="go-home-btn">Voltar para Home</button></Link>
         </PageContainer>
     )
 }

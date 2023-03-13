@@ -18,7 +18,9 @@ export default function Assento(props) {
             setIdSelecionado([...idSelecionado, novoIdSelecionado])
          
         } else {        
-            
+            if(!isAvailable) {
+                alert("Assento não disponível");
+            }
             const retira  = selecionado.filter( f => f !== item);
             setSelecionado(retira);
             const retiraId = idSelecionado.filter(i => i !== idItem);
