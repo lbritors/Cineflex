@@ -2,7 +2,7 @@
 
 A SPA for a cinema where yo can choose your filme, session and seat rapidly!
 
-<img src="assets/GifMaker_20230911001611355.gif"/>
+<img src="/assets/GifMaker_20230911001611355.gif"/>
 
 ## Available Scripts
 
