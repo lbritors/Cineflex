@@ -4,7 +4,6 @@ import axios from "axios";
 import Assento from "./Assento";
 import Legenda from "./Legenda";
 import { useParams } from "react-router-dom";
-import Formulario from "./Formulario";
 
 export default function Assentos(props) {
     const {assentos, setAssentos, selecionado, setSelecionado, idSelecionado, setIdSelecionado} = props;

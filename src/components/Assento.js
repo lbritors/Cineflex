@@ -5,9 +5,6 @@ import Formulario from "./Formulario";
 
 export default function Assento(props) {
     const {name, isAvailable, selecionado, setSelecionado, id, idSelecionado, setIdSelecionado} = props;
-    
-    console.log("assento", selecionado);
-    console.log("id", idSelecionado);
 
     function selecionar(item, idItem) {
         if (!selecionado.includes(item) && isAvailable) {

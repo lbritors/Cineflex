@@ -31,12 +31,42 @@ export default function App() {
             CINEFLEX
            </NavContainer>
             <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<HomePage filme={filme} setFilme={setFilme} setFotoFilme={setFotoFilme} setNomeFilme={setNomeFilme}/>}></Route>
-                    <Route path="/sessoes/:idFilme" element={<SessionsPage setDiaSemana={setDiaSemana} setDiaMes={setDiaMes}  setHora={setHora} sessao={sessao} setSessao={setSessao} nomeFilme={nomeFilme} fotoFilme={fotoFilme}/>}></Route>
-                    <Route path="/assentos/:idSessao" element={<SeatsPage diaSemana={diaSemana} hora={hora} nomeFilme={nomeFilme} fotoFilme={fotoFilme} cpfComprador={cpfComprador} setCpfComprador={setCpfComprador} nomeComprador={nomeComprador} setNomeComprador={setNomeComprador} assentos={assentos} setAssentos={setAssentos} selecionado={selecionado} setSelecionado={setSelecionado} />}></Route> 
-                    <Route path="/sucesso" element={<SuccessPage  nomeFilme={nomeFilme} hora={hora} filme={filme} diaMes={diaMes} nomeComprador={nomeComprador} cpfComprador={cpfComprador} selecionado={selecionado}/>}></Route>
-                </Routes>
+              <Routes>
+                <Route path="/" element={<HomePage filme={filme}
+                  setFilme={setFilme}
+                  setFotoFilme={setFotoFilme}
+                  setNomeFilme={setNomeFilme}
+                />}></Route>
+                <Route path="/sessoes/:idFilme" element={<SessionsPage setDiaSemana={setDiaSemana}
+                  setDiaMes={setDiaMes}
+                  setHora={setHora}
+                  sessao={sessao}
+                  setSessao={setSessao}
+                  nomeFilme={nomeFilme}
+                  fotoFilme={fotoFilme}
+                />}></Route>
+                <Route path="/assentos/:idSessao" element={<SeatsPage diaSemana={diaSemana}
+                  hora={hora}
+                  nomeFilme={nomeFilme}
+                  fotoFilme={fotoFilme}
+                  cpfComprador={cpfComprador}
+                  setCpfComprador={setCpfComprador}
+                  nomeComprador={nomeComprador}
+                  setNomeComprador={setNomeComprador}
+                  assentos={assentos}
+                  setAssentos={setAssentos}
+                  selecionado={selecionado}
+                  setSelecionado={setSelecionado}
+                />}></Route> 
+                <Route path="/sucesso" element={<SuccessPage nomeFilme={nomeFilme}
+                  hora={hora}
+                  filme={filme}
+                  diaMes={diaMes}
+                  nomeComprador={nomeComprador}
+                  cpfComprador={cpfComprador}
+                  selecionado={selecionado}
+                />}></Route>
+              </Routes>
             </BrowserRouter>
         </>
     )
